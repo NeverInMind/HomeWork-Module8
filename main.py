@@ -19,6 +19,8 @@ test = [{'name': 'Христина Зінчук', 'birthday': datetime(2020, 6, 
         {'name': 'Ірина Дерегус',
             'birthday': datetime(1946, 2, 14)},
         {'name': 'Лариса Лупій', 'birthday': datetime(2020, 10, 30)}]
+
+
 days_of_week = {
     'Monday': [],
     'Tuesday': [],
@@ -40,7 +42,7 @@ def get_birthdays_per_week():
             if item['birthday'].day >= today.day and item['birthday'].day <= \
                     (today + timedel).day:
                 brthday = datetime(
-                    2023, item['birthday'].month, item['birthday'].day).strftime('%A')
+                    today.year, item['birthday'].month, item['birthday'].day).strftime('%A')
                 find = days_of_week[brthday]
                 find.append(item['name'])
 
